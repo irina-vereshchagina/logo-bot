@@ -11,8 +11,8 @@ from telegram.ext import (
 from diffusers import DiffusionPipeline
 
 # 1) Токены из окружения
-TELEGRAM_TOKEN = os.environ["7395107471:AAGjMeouJcXJ5VFaQb7C0Daxd1fXipOofMI"]
-HF_HUB_TOKEN   = os.environ.get("artificialguybr/LogoRedmond-LogoLoraForSDXL-V2")
+TELEGRAM_TOKEN="7395107471:AAGjMeouJcXJ5VFaQb7C0Daxd1fXipOofMI"
+HF_HUB_TOKEN="artificialguybr/LogoRedmond-LogoLoraForSDXL-V2"
 
 # 2) Загружаем базовую SDXL-модель
 pipe = DiffusionPipeline.from_pretrained(
