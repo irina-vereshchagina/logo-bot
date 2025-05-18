@@ -11,12 +11,15 @@ TOKEN = "7395107471:AAGjMeouJcXJ5VFaQb7C0Daxd1fXipOofMI"
 MODEL_ID = "artificialguybr/LogoRedmond-LogoLoraForSDXL-V2"
 
 # 3) Загружаем модель
+import os
+
+hf_token = os.environ.get("HF_HUB_TOKEN")
 pipe = StableDiffusionPipeline.from_pretrained(
     MODEL_ID,
     torch_dtype=torch.float16,
-    revision="fp16"
+    revision="fp16",
+    use_auth_token=hf_token
 ).to("cuda" if torch.cuda.is_available() else "cpu")
-
 # 4) Обработчики
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
