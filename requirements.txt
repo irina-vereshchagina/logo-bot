@@ -1,5 +1,3 @@
-diffusers
-transformers
 python-telegram-bot
-torch
-accelerate
+requests
+Pillow
